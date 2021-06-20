@@ -7,10 +7,41 @@
 	<link rel="stylesheet" href="quiz.css" type="text/css" media="screen" />
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<script src="quiz.js" type="text/javascript" charset="utf-8"></script>	
+	<script src="quiz.js" type="text/javascript" charset="utf-8"></script>
+	<script src="quizlib.js" type="text/javascript" charset="utf-8"></script>
 </head>
+
 <body>
-	<p>Test</p>
+	<!-- Quiz Results -->
+	<div id="quiz-result" class="card">
+		You Scored <span id="quiz-percent"></span>% - <span id="quiz-score"></span>/<span
+			id="quiz-max-score"></span><br />
+	</div>
+
+	<!-- Quiz Container -->
+		<div id="quiz">
+			<span id="note">Bitte füllen Sie die Frage aus!</span>
+			<!-- Question 1 -->
+			<div id="q1" class="card quizlib-question">
+				<div class="quizlib-question-title"><audio controls autoplay><source src="audio/q1.mp3" type="audio/mpeg"></audio></div>
+				<div class="quizlib-question-answers">
+					<label><input type="radio" name="q1" onchange="changeQuestion();" value="a"> 30</label>
+					<label><input type="radio" name="q1" onchange="changeQuestion();" value="b"> 200</label>
+					<label><input type="radio" name="q1" onchange="changeQuestion();" value="c"> 100</label>
+					<label><input type="radio" name="q1" onchange="changeQuestion();" value="d"> 1000</label>
+				</div>
+			</div>
+			<!-- Question 2 -->
+			<div id="q2" class="card quizlib-question">
+				<div class="quizlib-question-title"><audio controls autoplay><source src="audio/q2.mp3" type="audio/mpeg"></audio></div>
+				<div class="quizlib-question-answers">
+					<label><input type="radio" name="q2" onchange="changeQuestion();" value="a"> Astra Zeneca</label>
+					<label><input type="radio" name="q2" onchange="changeQuestion();" value="b"> Johnson & Johnson</label>
+					<label><input type="radio" name="q2" onchange="changeQuestion();" value="c"> BioNTech</label>
+					<label><input type="radio" name="q2" onchange="changeQuestion();" value="d"> ALTA</label>
+				</div>
+			</div>
+		</div>
 </body>
 
 </html>
