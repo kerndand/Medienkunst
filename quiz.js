@@ -1,14 +1,22 @@
 var quiz;
 let buttonCount = 1;
 
+//Start quiz on click
+function startQuiz() {
+    document.getElementById("start").style.display = "none";
+    document.getElementById("q1").style.display = "block";
+    document.getElementById("a1").play();
+}
+
 //Change questions on first click on the radio button
 function changeQuestion() {
 
     stopAudio();
-
+    
     if (document.getElementById("q" + JSON.stringify(buttonCount + 1)) != null) {
         document.getElementById("q" + JSON.stringify(buttonCount)).style.display = "none";
         document.getElementById("q" + JSON.stringify(buttonCount + 1)).style.display = "block";
+        document.getElementById("a" + JSON.stringify(buttonCount+1)).play();
         buttonCount++;
     }
     else {
@@ -18,7 +26,7 @@ function changeQuestion() {
 }
 
 // Stop Audio, when next question occurs
-function stopAudio(_e) {
+function stopAudio() {
     var audios = document.getElementsByTagName('audio');
     for (var i = 0, len = audios.length; i < len; i++) {
         audios[i].pause();
